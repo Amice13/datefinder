@@ -1,0 +1,27 @@
+{
+  "name": "datefinder",
+  "version": "1.0.0",
+  "description": "A Node package for locating dates inside text",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amice13/datefinder.git"
+  },
+  "keywords": [
+    "date",
+    "datefinder",
+    "text",
+    "date extraction",
+    "NER",
+    "entity recognition"
+  ],
+  "author": "Zakharov Kyrylo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Amice13/datefinder/issues"
+  },
+  "homepage": "https://github.com/Amice13/datefinder#readme"
+}
