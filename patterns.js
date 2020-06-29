@@ -6,6 +6,7 @@ const timezones = `ACDT|ACST|ACT|ACWDT|ACWST|ADDT|ADMT|ADT|AEDT|AEST|AFT|AHDT|AH
 const naTimezones = `pacific|eastern|mountain|central`
 const allTimezones = `${timezones}|${naTimezones}`
 const delimiter = `(?:[.\\/\\\-]+)`
+const quotePatterns = `[«‹»›„“‟”’"❝❞❮❯⹂〝〞〟＂‚‘‛❛❜❟\`]`
 
 // Useless tokens (at least for now)
 const positionalTokens = `next|last|(?:следующ|предыдущ|наступн|попередн)(?:ий|ого|ем|им|е|а|ая)`
@@ -42,10 +43,10 @@ const monddyyyyPattern = `(?<month_monddyyyy>${months})(?<day_monddyyyy>${dayDig
 const ddmonyyyyPattern = `(?<day_ddmonyyyy>${dayDigit})(?<month_ddmonyyyy>${months})(?<year_ddmonyyyy>${yearDigit})`
 const yyyymonddPattern = `(?<year_yyyymondd>${yearDigit})(?<month_yyyymondd>${months})(?<day_yyyymondd>${dayDigit})`
 
-const dmonyPattern = `(?<day_dmony>${singleDayDigit}${digitsSuffixes}?|${verbalDay})(?:\\s*of\\s*|[^\S\r\n])?(?<month_dmony>${months})[, ]+(?<year_dmony>${yearDigit})(\\s*?року|\\s*?года)?`
+const dmonyPattern = `${quotePatterns}?(?<day_dmony>${singleDayDigit}${digitsSuffixes}?|${verbalDay})${quotePatterns}?(?:\\s*of\\s*|[^\S\r\n])?(?<month_dmony>${months})[, ]+(?<year_dmony>${yearDigit})(\\s*?року|\\s*?года)?`
 const ydmonPattern = `(?<year_ydmon>${yearDigit})[, ]+(?<day_ydmon>${singleDayDigit}${digitsSuffixes}?|${verbalDay})(?:\\s*of\\s*|[^\S\r\n])?(?<month_ydmon>${months})`
 const mondyPattern = `(?<month_mondy>${months})\\s*(?<day_mondy>${singleDayDigit}${digitsSuffixes}?|${verbalDay})[,\\s*]+(?<year_mondy>${yearDigit})(\\s*року|\\s*?года|\\s*[рг]\.)?`
-const dmonPattern = `(?<day_dmon>${singleDayDigit}${digitsSuffixes}?|${verbalDay})(?:\\s*of\\s*|[^\S\r\n])?(?<month_dmon>${months})`
+const dmonPattern = `${quotePatterns}?(?<day_dmon>${singleDayDigit}${digitsSuffixes}?|${verbalDay})${quotePatterns}?(?:\\s*of\\s*|[^\S\r\n])?(?<month_dmon>${months})`
 
 const monyPattern = `(?<month_mony>${months})[,\\s*]+(?<year_mony>${yearDigit})(\\s*року|\\s*?года|\\s*[рг]\.)?`
 
