@@ -79,7 +79,6 @@ const normalizeMonth = str => {
 }
 
 const normalizeDate = date => {
-  console.log(date)
   let year = date.year ? date.year : (new Date()).getFullYear() + ''
   let month = date.month ? normalizeMonth(date.month) : 0
   let day = date.day ? normalizeDay(date.day) : 0
