@@ -17,7 +17,7 @@ npm install datefinder --save
 ## Usage
 
 ```js
-const dateFinder = require('dateFinder')
+const dateFinder = require('datefinder')
 
 let text = 'Це трапилося 2 січня 2001 року. Я отримав листа, на якому була зазначена дата 12.12.2004.'
 

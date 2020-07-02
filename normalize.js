@@ -79,12 +79,13 @@ const normalizeMonth = str => {
 }
 
 const normalizeDate = date => {
+  console.log(date)
   let year = date.year ? date.year : (new Date()).getFullYear() + ''
   let month = date.month ? normalizeMonth(date.month) : 0
   let day = date.day ? normalizeDay(date.day) : 0
-  let hours = day.hours ? day.hours : 0
-  let minutes = day.minutes ? day.minutes : 0
-  let seconds = day.seconds ? day.seconds : 0
+  let hours = date.hours ? date.hours : 0
+  let minutes = date.minutes ? date.minutes : 0
+  let seconds = date.seconds ? date.seconds : 0
   let finalDate = new Date(year, month - 1, day, hours, minutes, seconds)
   let userTimezoneOffset = finalDate.getTimezoneOffset() * 60000
   return new Date(finalDate.getTime() - userTimezoneOffset)
